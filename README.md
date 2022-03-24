@@ -31,14 +31,13 @@
 ### 3. DQN算法流程
 
 	图一为论文Human-level control through deep reinforcement的算法实现，图二为其图解流程图
+<div align=center> <img src=".\img\algorithm2.jpg"/> </div>
 
-![Alt text](./img/algorithm2.jpg)
+<p align="center">图一 论文算法实现</p>
 
-<center>图一 论文算法实现</center>
+​	<div align=center> <img src=".\img\algorithm2.jpg"/> </div>
 
-​	![Alt text](./img/algorithm.png)
-
-<center>图二 算法图解流程</center>
+<p align="center">图二 算法图解流程</p>
 
 ### 4. 基于DQN的算法改进
 
@@ -64,12 +63,12 @@
 
 ​		Dueling DQN其原理是改变DQN的网络结构，它将State输入用于两个网络，一个作为Value function其与当前要选择的动作造成的影响无关（记作V(s)），其更考虑未来的情况所造成的影响。另一个作为advantage function用来关注当前的状态情况（记作Q(s,a)）。其在论文《Dueling Network Architectures for Deep Reinforcement Learning》中如图三所示，整个网络的结构如图四所示。
 
-![dueling](./img/dueling.jpg)
+<div align=center> <img src=".\img\dueling.jpg"/> </div>
 
-<center>图三 两个函数不同的关注重点</center>
+<p align="center">图三 两个函数不同的关注重点</p>
 
 <div align=center> <img src=".\img\dueling_network.jpg"/> </div>			
 
-<center>图四 Dueling DQN网络结构</center>
+<p align="center">图四 Dueling DQN网络结构</p>
 
 ​			在DQN中其网络的输出为Q(s,a)代表着当前状态和动作对结果的影响程度，越大代表每条策略经过它的可能性越大。论文中给出如下关系Q(s,a) = V(s)+A(s,a)。其原理就是让原来仅以一个网络获得Q(s,a)变成利用两个网络来相互制衡获得Q(s,a)。但在实际过程中，Q(s,a)很大程度要依赖V(s)的值，而整个训练过程，V(s)的值可能为0，即A(s,a)=Q(s,a)这与实际不符。故可以对A(s,a)进行约束，如另整个等式为Q(s,a) = V(s)+(A(s,a)-mean(A(s,a)))
