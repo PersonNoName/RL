@@ -35,7 +35,7 @@
 
 <p align="center">图一 论文算法实现</p>
 
-​	<div align=center> <img src=".\img\algorithm.jpg"/> </div>
+​	<div align=center> <img src=".\img\algorithm.png"/> </div>
 
 <p align="center">图二 算法图解流程</p>
 
