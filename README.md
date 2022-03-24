@@ -64,7 +64,7 @@
 
 ​		Dueling DQN其原理是改变DQN的网络结构，它将State输入用于两个网络，一个作为Value function其与当前要选择的动作造成的影响无关（记作V(s)），其更考虑未来的情况所造成的影响。另一个作为advantage function用来关注当前的状态情况（记作Q(s,a)）。其在论文《Dueling Network Architectures for Deep Reinforcement Learning》中如图三所示，整个网络的结构如图四所示。
 
-![dueling](.\img\dueling.jpg)
+![dueling](./img/dueling.jpg)
 
 <center>图三 两个函数不同的关注重点</center>
 
